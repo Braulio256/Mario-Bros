@@ -1,0 +1,221 @@
+class Juego
+
+class Personaje
+
+
+class Jugador
+class Mario
+class Luigi
+
+
+Class NPC
+class Princesa_Peach
+class Toad
+
+
+class Enemigo
+
+
+class Aplastables
+class Goomba
+class BillBala
+class Blooper
+class CheepCheep
+
+class Koopa
+class KoopaVolador
+class KoopaBlindado
+class KoopaTroopa
+
+class MiniBoss
+class Lakitu
+class HammerBros
+
+class NoAplastables
+class Spiny
+class BolaDeFuego
+class PlantaPiraña
+
+class Boss
+class Bowser
+
+
+
+class Escenario
+
+
+class Construccion
+class Piso
+class Muro
+
+
+class Fondo
+class Nube
+class Arbusto
+class Castillo
+class Musica
+
+class Ambiente
+class Cielo
+class Cueva
+class Agua
+
+
+class Interactuable
+class Ladrillo
+class LuckyBlock
+class PlantaCreciente
+class Tubo
+
+class Plataforma
+class PlataformaMovil
+class PlataformaConGravedad
+class PlataformaFija
+
+class Meta
+class Bandera
+class PuenteDeBowser
+
+
+class Interfaz
+class Puntuacion
+class Cronometro
+class Vidas
+class MonedasRecogidas
+class Nivel
+
+
+
+class Item
+
+
+class Moneda
+
+class PowerUp
+class FlorDeFuego
+class Estrella
+
+class Champiñon
+class Rojo
+class Verde
+
+
+
+class Martillo
+class CuadroDeDialogo
+
+
+
+Juego *-- Interfaz
+Juego *-- Escenario
+Juego *-- Personaje
+
+
+Escenario *-- Construccion
+Escenario *-- Fondo
+Escenario *-- Interactuable
+
+
+Construccion <|-- Piso
+Construccion <|-- Muro
+
+
+Ambiente <|-- Cielo
+Ambiente <|-- Cueva
+Ambiente <|-- Agua
+
+Fondo <|-- Ambiente
+Fondo <|-- Nube
+Fondo <|-- Arbusto
+Fondo <|-- Castillo
+Fondo <|-- Musica
+
+
+Plataforma <|-- PlataformaConGravedad
+Plataforma <|-- PlataformaMovil
+Plataforma <|-- PlataformaFija
+
+Meta <|-- Bandera
+Meta <|-- PuenteDeBowser
+
+LuckyBlock *-- Item
+
+Ladrillo *-- Moneda
+
+Interactuable <|-- Plataforma
+Interactuable <|-- Meta
+Interactuable <|-- Ladrillo
+Interactuable <|-- LuckyBlock
+Interactuable <|-- PlantaCreciente
+Interactuable <|-- Tubo
+
+
+Interfaz <|-- Puntuacion
+Interfaz <|-- Cronometro
+Interfaz <|-- Vidas
+Interfaz <|-- Nivel
+Interfaz <|-- MonedasRecogidas
+
+
+
+Personaje <|-- Jugador
+Personaje <|-- NPC
+Personaje <|-- Enemigo
+
+
+Jugador <|-- Mario
+Jugador <|-- Luigi
+
+
+NPC <|-- Princesa_Peach
+NPC <|-- Toad
+
+
+Koopa <|-- KoopaBlindado
+Koopa <|-- KoopaTroopa
+Koopa <|-- KoopaVolador
+
+Boss <|-- Bowser
+
+MiniBoss <|-- Lakitu
+MiniBoss <|-- HammerBros
+
+Aplastables <|-- MiniBoss
+Aplastables <|-- Koopa
+Aplastables <|-- Goomba
+Aplastables <|-- CheepCheep
+Aplastables <|-- BillBala
+Aplastables <|-- Blooper
+
+NoAplastables <|-- Boss
+NoAplastables <|-- Spiny
+NoAplastables <|-- BolaDeFuego
+NoAplastables <|-- PlantaPiraña
+
+Enemigo <|-- Aplastables
+Enemigo <|-- NoAplastables
+
+
+Champiñon <|-- Rojo
+Champiñon <|-- Verde
+
+PowerUp <|-- Champiñon
+PowerUp <|-- FlorDeFuego
+PowerUp <|-- Estrella
+
+Item <|-- Moneda
+Item <|-- PowerUp
+
+
+
+
+Personaje o-- Escenario
+
+Jugador o-- Item
+Jugador o--o Enemigo
+
+NPC o-- CuadroDeDialogo
+
+Bowser o-- Martillo
+HammerBros o-- Martillo
+
