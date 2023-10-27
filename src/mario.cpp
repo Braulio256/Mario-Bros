@@ -20,11 +20,6 @@ int main(int argc, char const *argv[])
     // Vaca* vaca2 = new Vaca(0, 4);
     // Vaca* vaca3 = new Vaca(0, 8);
 
-    // Arma *arma = new Arma();
-    // Bala *bala = new Bala(0, 0);
-
-    // mario1->RecogerArma(arma);
-
     list<Dibujos *> dibujos;
     dibujos.push_back(mario1);
     // dibujos.push_back(vaca2);

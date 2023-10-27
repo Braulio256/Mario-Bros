@@ -16,6 +16,11 @@ protected:
     int y;
 
 public:
+    Dibujos(int x, string recurso)
+    {
+        archivo.open("./data/" + recurso + ".txt");
+        this->x = x;
+    }
     Dibujos()
     {
         this->x = 0;
